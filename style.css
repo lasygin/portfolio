@@ -5,3 +5,169 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  text-align: center;
+  background: url(./img/triangle-mosaic.png);
+  color: #303030;
+  font-family: 'Poppins', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+li a {
+  padding: 0.5rem;
+  color: #4a4a4a;
+  font-size: 0.85rem;
+  transition: opacity 1s;
+}
+
+li a:hover {
+  opacity: 0.5;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 20px);
+  }
+}
+
+.hero-text {
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 2.5rem;
+  max-width: 450px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero i {
+  font-size: 50px;
+  color: #303030;
+  padding-bottom: 3rem;
+  animation: bounce 2s infinite;
+}
+
+.hero svg {
+  display: none;
+  order: -1;
+  margin: -2rem 0;
+}
+
+section {
+  padding: 2rem 1rem 2rem;
+}
+
+.projects {
+  background-color: #fafafa;
+}
+
+.project-container {
+  background-color: white;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.project-text {
+  padding-bottom: 1rem;
+}
+
+.project-container img {
+  width: 100%;
+  filter: grayscale();
+  transition: filter 1.5s;
+}
+
+.project-container img:hover {
+  filter: none;
+}
+
+.me-card {
+  margin-bottom: 1rem;
+}
+
+.photo-circle {
+  margin: 0 auto 0.5rem;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 11px solid #ffffff;
+  box-shadow: 4px 0px 50px rgba(55, 54, 54, 0.25);
+  overflow: hidden;
+}
+
+.photo-circle img {
+  width: 100%;
+  position: relative;
+  top: 1.2rem;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.icons-container i {
+  font-size: 2rem;
+  margin: 0.85rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #4a4a4a;
+  color: #ffffff;
+}
+
+footer i {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 0 0.3rem;
+}
