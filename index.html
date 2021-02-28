@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
@@ -35,7 +34,7 @@
       <div class="hero">
         <div class="hero-text">
           <h2>Need some web magic?</h2>
-          <p>Take a look what I can do</p>
+          <p class="stagger">Take a look what I can do</p>
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -546,24 +545,30 @@
         </svg>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <section id="projects" class="projects">
-        <h2>Projects</h2>
+      <section id="projects" class="projects transition">
+        <h2 class="transition">Projects</h2>
         <div class="flex-container">
-          <div class="project-container">
+          <div class="project-container transition">
             <div class="project-text">
-              <h3><a href="https://lasygin.github.io/translit/" target="_blank">Translit</a></h3>
+              <h3>
+                <a href="https://lasygin.github.io/translit/" target="_blank"
+                  >Translit</a
+                >
+              </h3>
               <p>Small app for transliteration cirillic text to latin</p>
             </div>
-            <a href="https://lasygin.github.io/translit/" target="_blank"><img src="./img/project-1.png" alt="" /></a>
+            <a href="https://lasygin.github.io/translit/" target="_blank"
+              ><img src="./img/project-1.png" alt=""
+            /></a>
           </div>
-          <div class="project-container">
+          <div class="project-container transition">
             <div class="project-text">
               <h3><a href="#">Translit</a></h3>
               <p>Small app for transliteration cirillic text to latin</p>
             </div>
             <a href="#"><img src="./img/project-1.png" alt="" /></a>
           </div>
-          <div class="project-container">
+          <div class="project-container transition">
             <div class="project-text">
               <h3><a href="#">Translit</a></h3>
               <p>Small app for transliteration cirillic text to latin</p>
@@ -571,17 +576,16 @@
             <a href="#"><img src="./img/project-1.png" alt="" /></a>
           </div>
         </div>
-        
       </section>
       <section id="me" class="me">
-        <div class="me-card">
+        <div class="me-card transition2">
           <div class="photo-circle">
             <img src="./img/face.png" alt="Yura Lasygin" />
           </div>
           <h2>Hi, I’m Yura Lasygin</h2>
           <p>Frontend developer</p>
         </div>
-        <div class="skills">
+        <div class="skills transition2">
           <!-- <h2>Skills</h2> -->
           <div class="icons-container">
             <i class="fab fa-html5"></i>
@@ -596,9 +600,71 @@
     </main>
     <footer>
       <span>Need me?</span>
-      <a href="https://github.com/lasygin" target="_blank"><i class="fab fa-github-alt"></i></a>
-      <a href="mailto: lasygin@gmail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+      <a href="https://github.com/lasygin" target="_blank"
+        ><i class="fab fa-github-alt"></i
+      ></a>
+      <a href="mailto: lasygin@gmail.com" target="_blank"
+        ><i class="fas fa-envelope-square"></i
+      ></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
     </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+      integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollToPlugin.min.js"
+      integrity="sha512-9DDJWj17gkdeGHU0Zr76wc9jY2g0IwE7ZCIxakVYKyzlTiOWZDZJOTaVgAzNo+LB7+EbGXxwCXkOP+a5rgkuqQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
+      integrity="sha512-QcYm1q7RbnXmwY7HJ0H7938IS0MalTPYqGUF0fIwQgEjMBt2tqjDBt+R5I+ppdwEohjMdHnFU0H+RxmrGQ8qcg=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollToPlugin);
+
+      let tl = gsap.timeline();
+
+      tl.from('.hero-text, svg', {
+        y: '-30%',
+        opacity: 0,
+        duration: 1.5,
+        ease: Power2.easeOut,
+      });
+      tl.from('.stagger', {
+        opacity: 0,
+        duration: 0.5,
+      });
+      tl.from('.fa-chevron-down', {
+        opacity: 0,
+        duration: 1,
+        ease: Power2.easeOut,
+      });
+      gsap.from('.transition', {
+        scrollTriger: {
+          trigger: '.transition',
+          start: 'top center'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.5,
+      });
+      gsap.from('.transition2', {
+        scrollTriger: {
+          trigger: '.transition2',
+          start: 'top center'
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.2,
+      });
+    </script>
   </body>
 </html>
