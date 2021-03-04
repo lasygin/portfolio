@@ -20,6 +20,7 @@ ul {
 a {
   color: initial;
   text-decoration: none;
+  cursor: pointer;
 }
 
 header {
@@ -42,14 +43,16 @@ ul {
   justify-content: space-between;
 }
 
-li a {
+li a,
+.deploy {
   padding: 0.5rem;
   color: #4a4a4a;
   font-size: 0.85rem;
   transition: opacity 1s;
 }
 
-li a:hover {
+li a:hover,
+.deploy:hover {
   opacity: 0.5;
 }
 
